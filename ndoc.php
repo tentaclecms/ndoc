@@ -16,6 +16,7 @@ class Ndoc extends Modules {
 
 function ndoc ($file) {
 	$base_path = THEMES_DIR.ACTIVE_THEME.'/docs/files/';
+	require_once('markdown.php');
 	 
 	if (is_dir($base_path)) {
 
@@ -24,7 +25,6 @@ function ndoc ($file) {
 		$uri_count = count($uri_parts);
 	
 		$uri_file = end($uri_parts);
-
 	
 		if ($uri_count < 2) {
 			$path = $base_path.$file[0];
@@ -34,9 +34,18 @@ function ndoc ($file) {
 	
 		if (!file_exists($path))
 			return "Invalid file: ".$path;
+		$use_md = false;
 			
-		return file_get_contents($path);
+		if ( $use_md ) {	
+			$markdown = file_get_contents($path);
+		
+			$markdown_html = Markdown($markdown);
+		
+			return $markdown_html;
+		} else {
+			return file_get_contents($path);
+		}
 	} else {
-		return "<p>Looks like you don't have a documents folder set up. <p>Create a folder in your theme called /docs/files/</p> ".$path;
+		return "<p>Looks like you don't have a documents folder set up in your theme yet.</p> <p>Create a folder in your theme called <strong>/docs/files/<strong></p>";
 	}
 }
