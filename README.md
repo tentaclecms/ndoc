@@ -9,10 +9,10 @@ Create a folder under your theme called docs. more your nDoc souce over to this 
 
 You should have 
 
-/docs/
-/docs/files/
-/docs/styles/
-/docs/javascript/
+ * /docs/
+ * /docs/files/
+ * /docs/styles/
+ * /docs/javascript/
 
 The Styles and Javascript should contain the generated code from nDocs but can be moved as your themes assets will be loaded.
 
