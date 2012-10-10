@@ -2,7 +2,7 @@
 class Ndoc extends Modules {
 
     public function __init() {
-        $this->addAlias("shortcode", "shortcode", 2);
+        $this->add_alias("shortcode", "shortcode", 2);
 		add_shortcode( 'docs', 'ndoc' );
     }
 
