@@ -1,5 +1,5 @@
 <?php
-class Ndoc extends Modules {
+class Ndoc extends Plugins {
 
     public function __init() {
         $this->add_alias("shortcode", "shortcode", 2);
