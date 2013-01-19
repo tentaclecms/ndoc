@@ -1,5 +1,5 @@
 <?php
-event::register('shortcode', 'ndoc::shortcode', 2);
+event::on('shortcode', 'ndoc::shortcode', 2);
 
 class ndoc {
 
