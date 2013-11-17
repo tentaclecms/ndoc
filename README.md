@@ -1,4 +1,4 @@
-tentacle-ndoc
+nDoc
 =============
 
 A nDoc module.
